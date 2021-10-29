@@ -1,39 +1,28 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
-
+/*
+  ======================================================================
+    Get All Tags along with their associated products
+  ======================================================================  
+*/
 router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
   Tag.findAll({
-    include: [
-      {
-        model: Product,
-        as: "tagged_products",
-      },
-    ],
+    include: [{ model: Product, as: "tagged_products" }]
   })
   .then((dbTagData) => res.json(dbTagData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  .catch((err) => { res.status(500).json(err); });
 });
 
+/*
+  ======================================================================
+    Get One Tag by Id along with their associated products
+  ======================================================================  
+*/
 router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
   Tag.findOne({
-    where: {
-      id: req.params.id,
-    },
-    include: [
-      {
-        model: Product,
-        as: "tagged_products",
-      },
-    ],
+    where: { id: req.params.id },
+    include: [{ model: Product, as: "tagged_products" }]
   })
   .then((dbTagData) => {
     if (!dbTagData) {
@@ -42,35 +31,31 @@ router.get('/:id', (req, res) => {
     }
     res.json(dbTagData);
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  .catch((err) => { res.status(500).json(err); });
 });
 
+/*
+  ======================================================================
+    Create New Tag
+  ======================================================================  
+*/
 router.post('/', (req, res) => {
-  // create a new tag
   Tag.create({
-    tag_name: req.body.tag_name,
+    tag_name: req.body.tag_name
   })
     .then((dbTagData) => res.json(dbTagData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    .catch((err) => { res.status(500).json(err); });
 });
 
+/*
+  ======================================================================
+    Update Tag Name By Id
+  ======================================================================  
+*/
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
   Tag.update(
-    {
-    tag_name: req.body.tag_name
-    },
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
+    { tag_name: req.body.tag_name },
+    { where: { id: req.params.id } }
   )
   .then((dbTagData) => {
     if (!dbTagData) {
@@ -79,18 +64,17 @@ router.put('/:id', (req, res) => {
     }
     res.json(dbTagData);
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  .catch((err) => { res.status(500).json(err); });
 });
 
+/*
+  ======================================================================
+    Delete Tag By Id
+  ======================================================================  
+*/
 router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
   Tag.destroy({
-    where: {
-      id: req.params.id,
-    },
+    where: { id: req.params.id }
   })
   .then((dbTagData) => {
     if (!dbTagData) {
@@ -99,10 +83,7 @@ router.delete('/:id', (req, res) => {
     }
     res.json(dbTagData);
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  .catch((err) => { res.status(500).json(err); });
 });
 
 module.exports = router;
