@@ -50,26 +50,26 @@ THEN I am able to successfully create, update, and delete data in my database
 
 <strong>Insomnia Core</strong>
 
-Get Products
-Get Categories
-Get Tags
+- Get Products
+- Get Categories
+- Get Tags
 
-Get Product 1
-Get Category 1
-Get Tag 1
+- Get Product 1
+- Get Category 1
+- Get Tag 1
 
-Create Category
-Delete Category
+- Create Category
+- Delete Category
 
-Create Tag
-Delete Tag
+- Create Tag
+- Delete Tag
 
-Create Product
-Delete Product
+- Create Product
+- Delete Product
 
-Update Category
-Update Tag
-Update Product
+- Update Category
+- Update Tag
+- Update Product
 
 # Production Video Link
 https://watch.screencastify.com/v/Io9yUxnLefiEFtZSmnNz
