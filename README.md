@@ -50,3 +50,5 @@ THEN I am able to successfully create, update, and delete data in my database
 
 Insomnia Core
 
+# Production Video Link
+https://watch.screencastify.com/v/Io9yUxnLefiEFtZSmnNz
