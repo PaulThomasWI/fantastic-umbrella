@@ -48,7 +48,28 @@ THEN I am able to successfully create, update, and delete data in my database
 
 # Test
 
-Insomnia Core
+<strong>Insomnia Core</strong>
+
+Get Products
+Get Categories
+Get Tags
+
+Get Product 1
+Get Category 1
+Get Tag 1
+
+Create Category
+Delete Category
+
+Create Tag
+Delete Tag
+
+Create Product
+Delete Product
+
+Update Category
+Update Tag
+Update Product
 
 # Production Video Link
 https://watch.screencastify.com/v/Io9yUxnLefiEFtZSmnNz
