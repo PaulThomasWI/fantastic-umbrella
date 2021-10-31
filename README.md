@@ -44,6 +44,7 @@ THEN I am able to successfully create, update, and delete data in my database
 - seeds
 
 # Model
+![e-r](https://user-images.githubusercontent.com/87770976/139596772-281427b6-26ea-41a3-9032-85f7e3dd1e20.png)
 
 # Test
 
